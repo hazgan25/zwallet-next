@@ -30,7 +30,7 @@ const authReducer = (prevState = initialState, action) => {
         case authLogin.concat('_', Fulfilled):
             const data = action.payload.data
             const userData = {
-                id: data.data.token,
+                id: data.data.id,
                 token: data.data.token,
                 pin: data.data.pin
             }

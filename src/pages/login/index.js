@@ -27,7 +27,8 @@ const Login = (props) => {
     }
     useEffect(() => {
         if (props.auth.isFulfilled) {
-            if (props.auth.userData.pin) {
+            // console.log(props.auth.userData.pin);
+            if (props.auth.userData.pin !== null) {
                 router.push('/home')
             }
             router.push('/user/pin')

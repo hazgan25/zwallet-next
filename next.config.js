@@ -1,5 +1,8 @@
 module.exports = {
   reactStrictMode: true,
+  image: {
+    domain: ['zwalet.herokuapp.com', 'cdn.pixabay.com']
+  },
   rewrites: async = () => {
     return [
       { source: '/auth/register', destination: '/register' },
