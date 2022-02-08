@@ -1,0 +1,65 @@
+.footer{
+    background: #6379F4;
+    height: 116px;
+}
+
+.copyright-text{
+    position: relative;
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+
+    text-align: center;
+
+    color: rgba(239, 239, 239, 0.9);
+
+    top: 8px;
+}
+
+.number-phone-text{
+    position: relative;
+    font-family: Nunito Sans;
+    font-style: normal;
+
+    text-align: center;
+
+    color: #EFEFEF;
+}
+
+.contact-text{
+    position: relative;
+    font-family: Nunito Sans;
+    font-style: normal;
+
+    text-align: center;
+
+    color: #EFEFEF;
+    bottom: 7px;
+
+    cursor: pointer;
+}
+
+/* tablet */
+@media(min-width:768px){
+    .footer{
+        height: 43px;
+    }
+    .copyright-text{
+        text-align: left;
+        float: left;
+
+        left: 23px;
+    }
+    .number-phone-text{
+        text-align: right;
+        
+        top: 8px;
+        right: 223px;
+    }
+    .contact-text{
+        text-align: right;
+        
+        bottom: 33px;
+        right: 23px;
+    }
+}

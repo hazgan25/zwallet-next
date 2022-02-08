@@ -1,0 +1,66 @@
+.input-pin{
+    position: relative;
+    height: 45px;
+    width: 33px;
+    background: #FFFFFF;
+
+    border: 1px solid rgba(169, 169, 169, 0.6);
+    box-sizing: border-box;
+    box-shadow: 0px 10px 75px rgba(147, 147, 147, 0.1);
+    border-radius: 10px;
+
+    text-align: center;
+
+    top: 23px;
+    right: 13px;
+}
+
+.btn-auth{
+    top: 43px;
+}
+
+/* tablet */
+@media(min-width:768px){
+    .start-access-text{
+        top: 133px;
+    }
+    .description-text{
+        top: 133px;
+    }
+    .input-pin{
+        top: 153px;
+    }
+    .btn-auth{
+        top: 183px;
+    }
+}
+
+/* laptop M */
+@media(min-width:1200px){
+    .justify-content-between{
+        justify-content: center !important;
+    }
+}
+
+/* laptop L */
+@media(min-width:1440px){
+    .start-access-text{
+        top: 183px;
+    }
+    .description-text{
+        top: 183px;
+    }
+    .input-pin{
+        width: 53px;
+        height: 65px;
+        left: 42px;
+        top: 183px;
+    }
+    .justify-content-between{
+        justify-content: space-between !important;
+        width: 423px;
+    }
+    .btn-auth{
+        top: 233px;
+    }
+}

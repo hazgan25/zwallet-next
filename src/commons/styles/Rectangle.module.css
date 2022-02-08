@@ -1,0 +1,153 @@
+.background-blue-linear{
+    background: url('../../assets/img/background-blue-linear.webp');
+    height: 768px;
+    width: auto;
+    padding: 10px;
+}
+
+.brand-text{
+    position: relative;
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 29px;
+    line-height: 40px;
+
+    color: #fff;
+
+    top: 5%;
+    text-align: center;
+}
+
+.phone{
+    position: relative;
+    top: 32px;
+    right: 12px;
+}
+
+.phone-one{
+    position: absolute;
+    width: 212px;
+    display: inline-block;
+    /* left: 5%; */
+    left: 13px;
+
+}
+.phone-two{
+    position: absolute;
+    width: 212px;
+    /* left: 30%; */
+    left: 103px;
+}
+
+.app-banking-text{
+    position: relative;
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+
+    /* width: 120px; */
+
+    color: #fff;
+
+    text-align: center;
+    top: 403px;
+}
+
+.decription-app-text{
+    position: relative;
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    /* width: 120px; */
+    text-align: center;
+    top: 443px;
+}
+
+/* mobile m */
+@media(min-width:375px){
+    .phone-one{
+        left: 53px;
+    }
+    .phone-two{
+        left: 133px;
+    }
+}
+/* mobile L */
+@media(min-width:425px){
+    .phone-one{
+        left: 63px;
+    }
+    .phone-two{
+        left: 163px;
+    }
+}
+
+/* tablet */
+@media(min-width:768px){
+    .background-blue-linear{
+        padding: 0;
+    }
+    .brand-text{
+        text-align: left;
+        left: 10%;
+        top: 5%;
+    }
+    .phone{
+        left: 10%;
+    }
+    .phone-one{
+        width: 212px;
+        left: 5%;
+    }
+    .phone-two{
+        width: 212px;
+        left: 25%;
+    }
+    .app-banking-text{
+        text-align: left;
+        top: 423px;
+        left: 23px;
+    }
+    .decription-app-text{
+        text-align: left;
+        top: 483px;
+        left: 23px;
+        width: 323px;
+    }
+}
+
+/* laptop L */
+@media(min-width:1200px){
+    .phone{
+        left: 40px;
+    }
+    .phone-one{
+        width: 312px;
+
+    }
+    .phone-two{
+        width: 312px;
+    }
+    .brand-text{
+        left: 122px;
+        top: 52px;
+    }
+    .app-banking-text{
+        font-size: 24px;
+        line-height: 33px;
+        left: 122px;
+        top: 523px;
+    }
+    .decription-app-text{
+        font-size: 16px;
+        line-height: 23px;
+        left: 122px;
+        width: 423px;
+        top: 553px;
+    }
+}
+

@@ -1,0 +1,33 @@
+.data-update{
+    height: 223px;
+    width: 14px;
+    /* height: 3px; */
+
+    background: #6379F4;
+    border-radius: 15px;
+}
+.day-text{
+    position: relative;
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+
+    color: #8F8F8F;
+    bottom: 3px;
+    padding-top: 12px;
+}
+
+.range-data{
+    position: relative;
+    margin-right: -16px;
+    right: 10px;
+}
+
+/* tablet */
+@media(min-width:768px){
+    .range-data{
+        margin-right: -20px;
+    }
+}
