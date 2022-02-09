@@ -31,7 +31,7 @@ const Sidebar = () => {
 
                 <div className={`row ${styles['row']}`}>
                     <div className={`col ${styles['col']}`}>
-                        <Link href='home/topup' passHref>
+                        <Link href='/home/topup' passHref>
                             <h5 className={router.pathname == '/topup' ? `bi bi-plus-lg ${styles['bi-blue']}` : `bi bi-plus-lg ${styles['bi']}`}>
                                 <span className={router.pathname == '/topup' ? `${styles['dashboard-text-blue']}` : `${styles['dashboard-text']}`}>
                                     Top Up
@@ -40,7 +40,7 @@ const Sidebar = () => {
                         </Link>
                     </div>
                     <div className={`col ${styles['col']}`}>
-                        <Link href='home/profile' passHref>
+                        <Link href='/home/profile' passHref>
                             <h5 className={router.pathname == '/profile' ? `bi bi bi-person ${styles['bi-blue']}` : `bi bi bi-person ${styles['bi']}`}>
                                 <span className={router.pathname == '/profile' ? `${styles['dashboard-text-blue']}` : `${styles['dashboard-text']}`}>
                                     Profile

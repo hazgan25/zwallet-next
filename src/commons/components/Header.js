@@ -43,6 +43,7 @@ const Header = (props) => {
 
     const myLoader = () => {
         if (userData) {
+            // console.log(`${process.env.NEXT_PUBLIC_HOST}/uploads/${userData.userData.image}`);
             return `${process.env.NEXT_PUBLIC_HOST}/uploads/${userData.userData.image}`
         }
     }
