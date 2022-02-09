@@ -50,7 +50,14 @@ const Sidebar = () => {
                     </div>
                 </div>
 
-                <h5 className={`bi bi-box-arrow-right ${styles['bi']} ${styles['logout']}`}><span className={`${styles['dashboard-text']}`}>Logout</span></h5>
+                <Link href='/logout' passHref>
+                    <h5 className={`bi bi-box-arrow-right ${styles['bi']} ${styles['logout']}`}>
+                        <span className={`${styles['dashboard-text']}`}>
+                            Logout
+                        </span>
+                    </h5>
+                </Link>
+
             </div>
         </>
     )

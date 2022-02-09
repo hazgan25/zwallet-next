@@ -8,3 +8,10 @@ export const loginAction = (body) => {
         payload: login(body)
     }
 }
+
+export const logoutAction = () => {
+    const { authLogout } = ACTION_STRING
+    return {
+        type: authLogout
+    }
+}

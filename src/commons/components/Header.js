@@ -41,26 +41,8 @@ const Header = (props) => {
         }
     }, [userData, props])
 
-    // console.log(process.env.NEXT_PUBLIC_HOST + '/uploads' + userData.userData.image);
-    // const image = process.env.NEXT_PUBLIC_HOST + '/uploads' + userData.userData.image
-    // console.log(userData);
-    // console.log(photoProfile);
-    // console.log(userData.firstName);
-    // console.log(userData);
-    const myLoader = ({ src }) => {
-
-        // if (userData) return imageProfile = `${process.env.NEXT_PUBLIC_HOST}/uploads/${userData.userData.Image}`
-        // if (userData) return imageProfile = photoDefault
-
-        // if (userData) {
-        //     console.log(userData.userData.image);
-        // }
+    const myLoader = () => {
         if (userData) {
-            // console.log(userData.userData.image);
-            // const imageProfile = process.env.NEXT_PUBLIC_HOST + '/uploads/' + userData.userData.image
-            // console.log(imageProfile);
-            // console.log(`${process.env.NEXT_PUBLIC_HOST}/uploads/${userData.userData.Image}`);
-            if (userData && userData.userData.Image === null) return 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'
             return `${process.env.NEXT_PUBLIC_HOST}/uploads/${userData.userData.image}`
         }
     }
@@ -73,8 +55,8 @@ const Header = (props) => {
 
                     <div className='d-flex'>
                         <div className={`${styles['photo-profile']}`}>
-                            <Image loader={myLoader} src={userData && userData.userData.image !== null ? `${process.env.NEXT_PUBLIC_HOST}/uploads/${userData.userData.image}` :
-                                userData && userData.userData.image === null ? 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png' : photoDefault} alt='avatar' width='52' height='52' objectFit='cover' className={`${styles['radius-photo']}`} />
+                            <Image loader={myLoader} src={userData && userData.userData.image !== null ? `${process.env.NEXT_PUBLIC_HOST}/uploads/${userData.userData.image}` : 'avatar'}
+                                alt='avatar' width='52' height='52' objectFit='cover' className={`${styles['radius-photo']}`} />
                         </div>
 
                         <div>
