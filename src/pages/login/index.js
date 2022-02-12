@@ -8,6 +8,7 @@ import styles from 'src/commons/styles/MediaLogin.module.css'
 import mail from 'src/assets/svg/mail.svg'
 import lock from 'src/assets/svg/lock.svg'
 import Swal from 'sweetalert2'
+import ReactLoading from 'react-loading'
 
 import { useRouter } from 'next/router'
 import { connect } from 'react-redux'
@@ -25,13 +26,18 @@ const Login = (props) => {
         }
         props.loginDispatch(body)
     }
+
     useEffect(() => {
+        if (props.auth.isReject) {
+            console.log(props.auth.errData)
+        }
         if (props.auth.isFulfilled) {
             // console.log(props.auth.userData.pin);
-            if (props.auth.userData.pin !== null) {
-                router.push('/home')
+            if (props.auth.userData.pin === null) {
+                router.push('/user/pin')
+
             }
-            router.push('/user/pin')
+            router.push('/home')
         }
     })
 

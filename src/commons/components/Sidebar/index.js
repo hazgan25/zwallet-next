@@ -1,6 +1,8 @@
 import styles from 'src/commons/styles/Sidebar.module.css'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import Topup from 'src/commons/components/Topup'
+// import Topup from 'src/pages/topup'
 
 const Sidebar = () => {
     const router = useRouter()
@@ -18,6 +20,7 @@ const Sidebar = () => {
                             </h5>
                         </Link>
                     </div>
+
                     <div className={`col ${styles['col']}`}>
                         <Link href='/home/transfer' passHref>
                             <h5 className={router.pathname == '/transfer' ? `bi bi-arrow-up ${styles['bi-blue']}` : `bi bi-arrow-up ${styles['bi']}`}>
@@ -29,16 +32,21 @@ const Sidebar = () => {
                     </div>
                 </div>
 
+
                 <div className={`row ${styles['row']}`}>
                     <div className={`col ${styles['col']}`}>
-                        <Link href='/home/topup' passHref>
+                        {/* <Link href='/home/topup' passHref> */}
+                        <Topup>
                             <h5 className={router.pathname == '/topup' ? `bi bi-plus-lg ${styles['bi-blue']}` : `bi bi-plus-lg ${styles['bi']}`}>
                                 <span className={router.pathname == '/topup' ? `${styles['dashboard-text-blue']}` : `${styles['dashboard-text']}`}>
                                     Top Up
                                 </span>
                             </h5>
-                        </Link>
+                        </Topup>
+
+                        {/* </Link> */}
                     </div>
+
                     <div className={`col ${styles['col']}`}>
                         <Link href='/home/profile' passHref>
                             <h5 className={router.pathname == '/profile' ? `bi bi bi-person ${styles['bi-blue']}` : `bi bi bi-person ${styles['bi']}`}>

@@ -5,8 +5,8 @@ import Swal from 'sweetalert2'
 const initialState = {
     userData: {
         id: null,
-        pin: '',
-        token: ''
+        pin: null,
+        token: null
     },
     isPending: false,
     isFulfilled: false,
@@ -43,11 +43,13 @@ const authReducer = (prevState = initialState, action) => {
 
         case authLogin.concat('_', Rejected):
             const errData = action.payload
+            let statusErr = errData.response.data.msg
             Swal.fire(
                 'There is an error',
-                `${errData.response.data.msg}`,
+                `${statusErr === 'Wrong password' ? 'Email/Password is Wrong' : statusErr}`,
                 'error'
             )
+            // console.log(errData)
             return {
                 ...prevState,
                 isPending: false,

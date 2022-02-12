@@ -1,0 +1,18 @@
+.topup-text{
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 30px;
+    /* or 187% */
+    Width :302px;
+
+
+    color: rgba(58, 61, 66, 0.6);
+}
+.topup-input{
+    position: relative;
+    width: 90%;
+    height: 32px;
+    left: 12px;
+}

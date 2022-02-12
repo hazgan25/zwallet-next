@@ -1,4 +1,4 @@
-// import Head from 'next/head'
+// / import Head from 'next/head'
 // import Image from 'next/image'
 // import styles from 'src/commons/styles/Home.module.css'
 import Link from 'next/link'

@@ -1,12 +1,18 @@
+import { ACTION_STRING } from '../actions/actionString'
 import { combineReducers } from 'redux'
 import authReducer from './auth'
 import usersReducer from './user'
-import { ACTION_STRING } from '../actions/actionString'
 import storage from 'redux-persist/lib/storage'
+import dashboarReducer from './dashboard'
+import historyReducer from './history'
+import topupReducer from './topup'
 
 const reducers = combineReducers({
     auth: authReducer,
-    user: usersReducer
+    user: usersReducer,
+    dashboad: dashboarReducer,
+    history: historyReducer,
+    topup: topupReducer
 })
 
 const rootReducer = (state, action) => {

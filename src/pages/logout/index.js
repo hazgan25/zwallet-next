@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { logout } from 'src/modules/auth'
+import { logout } from 'src/modules/utils/auth'
 import { logoutAction } from 'src/redux/actions/auth'
 import { connect } from 'react-redux'
 import { useRouter } from 'next/router'

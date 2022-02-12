@@ -6,7 +6,7 @@ const Topup = () => {
         <>
             <Layout title='Zwallet - Top Up'>
                 <MenuHome>
-                    <p>Home</p>
+
                 </MenuHome>
             </Layout>
         </>

@@ -1,15 +1,11 @@
-import { ActionType } from 'redux-promise-middleware'
 import { ACTION_STRING } from 'src/redux/actions/actionString'
+import { ActionType } from 'redux-promise-middleware'
 
 const initialState = {
-    userData: {
-        id: null,
-        firstName: '',
-        lastName: '',
-        email: '',
-        image: null,
-        noTelp: null,
-        balance: 0
+    dashboardData: {
+        totalIncome: 0,
+        totalExpense: 0,
+        listIncome: []
     },
     isPending: false,
     isFulfilled: false,
@@ -17,12 +13,12 @@ const initialState = {
     errData: {}
 }
 
-const usersReducer = (prevState = initialState, action) => {
-    const { userDataPersonal } = ACTION_STRING
+const dashboarReducer = (prevState = initialState, action) => {
+    const { dashboardPersonal } = ACTION_STRING
     const { Pending, Fulfilled, Rejected } = ActionType
 
     switch (action.type) {
-        case userDataPersonal.concat('_', Pending):
+        case dashboardPersonal.concat('_', Pending):
             return {
                 ...prevState,
                 isPending: true,
@@ -30,25 +26,21 @@ const usersReducer = (prevState = initialState, action) => {
                 isReject: false,
             }
 
-        case userDataPersonal.concat('_', Fulfilled):
+        case dashboardPersonal.concat('_', Fulfilled):
             const data = action.payload.data
-            const userData = {
-                id: data.data.id,
-                firstName: data.data.firstName,
-                lastName: data.data.lastName,
-                email: data.data.email,
-                image: data.data.image,
-                noTelp: data.data.noTelp,
-                balance: data.data.balance
+            const dashboardData = {
+                totalIncome: data.data.totalIncome,
+                totalExpense: data.data.totalExpense,
+                listIncome: data.data.listIncome
             }
             return {
                 ...prevState,
                 isPending: false,
                 isFulfilled: true,
-                userData
+                dashboardData
             }
 
-        case userDataPersonal.concat('_', Rejected):
+        case dashboardPersonal.concat('_', Rejected):
             const errData = action.payload
             return {
                 ...prevState,
@@ -56,8 +48,9 @@ const usersReducer = (prevState = initialState, action) => {
                 isReject: true,
                 errData
             }
+
         default: return prevState
     }
 }
 
-export default usersReducer
+export default dashboarReducer

@@ -1,7 +1,7 @@
 module.exports = {
   reactStrictMode: true,
-  image: {
-    domain: ['zwalet.herokuapp.com', 'cdn.pixabay.com']
+  images: {
+    domains: ['zwalet.herokuapp.com', 'cdn.pixabay.com']
   },
   rewrites: async = () => {
     return [

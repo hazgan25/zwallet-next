@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
-import { register } from 'src/modules/auth'
+import { register } from 'src/modules/utils/auth'
 import Layout from 'src/commons/components/Layout'
 import Rectangle from 'src/commons/components/Rectangle'
 import Image from 'next/image'
