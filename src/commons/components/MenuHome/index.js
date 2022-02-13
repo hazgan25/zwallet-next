@@ -1,8 +1,10 @@
 import Header from 'src/commons/components/Header'
 import Footer from 'src/commons/components/Footer'
 import Sidebar from 'src/commons/components/Sidebar'
+import Private from 'src/commons/components/Private'
 
 const MenuHome = ({ children }) => {
+    Private()
     return (
         <>
             <Header />

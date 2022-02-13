@@ -7,16 +7,16 @@ import Link from 'next/link'
 import styles from 'src/commons/styles/MediaLogin.module.css'
 import mail from 'src/assets/svg/mail.svg'
 import lock from 'src/assets/svg/lock.svg'
-import Swal from 'sweetalert2'
-import ReactLoading from 'react-loading'
 
 import { useRouter } from 'next/router'
-import { connect } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { loginAction } from 'src/redux/actions/auth'
 
-const Login = (props) => {
-    const router = useRouter()
+const Login = () => {
     const [showPassword, setShowPassword] = useState(false)
+    const router = useRouter()
+    const dispatch = useDispatch()
+    const auth = useSelector((state) => state.auth)
 
     const handleLogin = (e) => {
         e.preventDefault()
@@ -24,16 +24,17 @@ const Login = (props) => {
             email: e.target.email.value,
             password: e.target.password.value
         }
-        props.loginDispatch(body)
+        // props.loginDispatch(body)
+        dispatch(loginAction(body))
     }
 
     useEffect(() => {
-        if (props.auth.isReject) {
-            console.log(props.auth.errData)
+        if (auth.isReject) {
+            console.log('ini err', auth.errData)
         }
-        if (props.auth.isFulfilled) {
+        if (auth.isFulfilled) {
             // console.log(props.auth.userData.pin);
-            if (props.auth.userData.pin === null) {
+            if (auth.userData.pin === null) {
                 router.push('/user/pin')
 
             }
@@ -87,18 +88,20 @@ const Login = (props) => {
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        auth: state.auth
-    }
-}
+// const mapStateToProps = (state) => {
+//     return {
+//         auth: state.auth
+//     }
+// }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        loginDispatch: (body) => {
-            dispatch(loginAction(body))
-        }
-    }
-}
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         loginDispatch: (body) => {
+//             dispatch(loginAction(body))
+//         }
+//     }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+// export default connect(mapStateToProps, mapDispatchToProps)(Login)
+
+export default Login

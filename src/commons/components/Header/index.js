@@ -3,21 +3,22 @@ import Image from 'next/image'
 import photoDefault from 'src/assets/img/profile-default.png'
 
 import { personalUser } from 'src/redux/actions/user'
-import { connect } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
 
-const Header = (props) => {
-    const id = props.id
-    const token = props.token
 
-    //info user
-    const firstName = props.firstName
-    const lastName = props.lastName
-    const image = props.image
-    const noTelp = props.noTelp
-    const balance = props.balance
+const Header = () => {
+    const dispatch = useDispatch()
+    const state = useSelector((state) => state)
+    const { id, token } = state.auth.userData
 
-    props.userDataDispatch(id, token)
+    const { userData } = state.user
+    const { image, firstName, lastName, noTelp } = userData
+    // console.log(userData)
 
+    useEffect(() => {
+        dispatch(personalUser(id, token))
+    }, [dispatch, id, token])
     return (
         <>
             <nav className={`navbar navbar-light bg-white shadow ${styles['navbar-light']}`}>
@@ -55,27 +56,79 @@ const Header = (props) => {
     )
 }
 
-const mapStateToProps = (state) => {
-    // console.log(state);
-    return {
-        token: state.auth.userData.token,
-        id: state.auth.userData.id,
-        firstName: state.user.userData.firstName,
-        lastName: state.user.userData.lastName,
-        image: state.user.userData.image,
-        noTelp: state.user.userData.noTelp,
-    }
-}
+export default Header
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        userDataDispatch: (id, token) => {
-            dispatch(personalUser(id, token))
-        }
-    }
-}
+// const Header = (props) => {
+//     const id = props.id
+//     const token = props.token
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
-// export default Header
+//     //info user
+//     const firstName = props.firstName
+//     const lastName = props.lastName
+//     const image = props.image
+//     const noTelp = props.noTelp
+//     const balance = props.balance
 
-// export default connect(mapStateToProps)(Header);
+//     props.userDataDispatch(id, token)
+
+//     return (
+//         <>
+//             <nav className={`navbar navbar-light bg-white shadow ${styles['navbar-light']}`}>
+//                 <div className='container-fluid'>
+//                     <h4 className={`navbar-brand barand-text ${styles['brand-text']}`}>Zwallet</h4>
+
+//                     <div className='d-flex'>
+//                         <div className={`${styles['photo-profile']}`}>
+//                             <Image src={
+//                                 !image ? photoDefault :
+//                                     !`${process.env.NEXT_PUBLIC_IMAGE_USER}/${image}` ? photoDefault :
+//                                         `${process.env.NEXT_PUBLIC_IMAGE_USER}/${image}`
+//                             }
+//                                 placeholder='blur'
+//                                 blurDataURL={photoDefault}
+//                                 onError={() => {
+//                                     photoDefault
+//                                 }}
+//                                 alt='avatar' width='52' height='52' objectFit='cover' className={`${styles['radius-photo']}`} />
+//                         </div>
+
+//                         <div>
+//                             <p className={`${styles['name-profile']}`}>{`${firstName} ${lastName}`}</p>
+//                             <p className={`${styles['phone-number']}`}>{noTelp !== null ? noTelp : 'no phone number'}</p>
+//                         </div>
+
+//                         <div className={`${styles['positition-bell']}`}>
+//                             <h5 className='bi bi-bell'></h5>
+//                         </div>
+
+//                     </div>
+//                 </div>
+//             </nav>
+//         </>
+//     )
+// }
+
+// const mapStateToProps = (state) => {
+//     // console.log(state);
+//     return {
+//         token: state.auth.userData.token,
+//         id: state.auth.userData.id,
+//         firstName: state.user.userData.firstName,
+//         lastName: state.user.userData.lastName,
+//         image: state.user.userData.image,
+//         noTelp: state.user.userData.noTelp,
+//     }
+// }
+
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         userDataDispatch: (id, token) => {
+//             dispatch(personalUser(id, token))
+//         }
+//     }
+// }
+
+// export default connect(mapStateToProps, mapDispatchToProps)(Header)
+// // export default Header
+
+// // export default connect(mapStateToProps)(Header);
