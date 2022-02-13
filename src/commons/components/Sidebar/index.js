@@ -2,11 +2,52 @@ import styles from 'src/commons/styles/Sidebar.module.css'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Topup from 'src/commons/components/Topup'
+import Swal from 'sweetalert2'
 // import Topup from 'src/pages/topup'
 
 
 const Sidebar = () => {
     const router = useRouter()
+
+    const onLogout = () => {
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-primary',
+                cancelButton: 'btn btn-secondary'
+            },
+            buttonsStyling: false
+        })
+
+        swalWithBootstrapButtons.fire({
+            title: 'Are you sure you want to log out?',
+            text: "You can log back in at any time!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Logout!',
+            cancelButtonText: 'cancel!',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                swalWithBootstrapButtons.fire(
+                    'Logout!',
+                    'Logout Successful',
+                    'success'
+                )
+                setTimeout(() => {
+                    router.replace('/logout')
+                }, 3000);
+            } else if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                swalWithBootstrapButtons.fire(
+                    'Cancelled',
+                    'Enjoy again :)',
+                )
+            }
+        })
+    }
+
     return (
         <>
             <div className={`${styles['sidebar']} ${styles['sidebar-top']}`}>
@@ -59,13 +100,13 @@ const Sidebar = () => {
                     </div>
                 </div>
 
-                <Link href='/logout' passHref>
-                    <h5 className={`bi bi-box-arrow-right ${styles['bi']} ${styles['logout']}`}>
-                        <span className={`${styles['dashboard-text']}`}>
-                            Logout
-                        </span>
-                    </h5>
-                </Link>
+                {/* <Link href='/logout' passHref> */}
+                <h5 className={`bi bi-box-arrow-right ${styles['bi']} ${styles['logout']}`} onClick={onLogout}>
+                    <span className={`${styles['dashboard-text']}`}>
+                        Logout
+                    </span>
+                </h5>
+                {/* </Link> */}
 
             </div>
         </>

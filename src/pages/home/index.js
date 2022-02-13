@@ -17,7 +17,7 @@ import Link from 'next/link'
 const Home = () => {
     const dispatch = useDispatch()
     const state = useSelector((state) => state)
-    console.log(state.history)
+    // console.log(state.history)
     const { id, token } = state.auth.userData
     const { userData } = state.user
     const { dashboardData } = state.dashboad
