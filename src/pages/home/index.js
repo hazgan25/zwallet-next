@@ -22,7 +22,6 @@ const Home = (props) => {
 
     const totalIncome = props.totalIncome
     const totalExpense = props.totalExpense
-
     const balance = props.balance
     const noTelp = props.noTelp
     const param = {
@@ -118,6 +117,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         historyDispatch: (param, token) => {
             dispatch(historyAction(param, token))
+        },
+        searchRecaiverDispatch: (param, token) => {
+            dispatch(searchReceiverAction(param, token))
         }
     }
 }

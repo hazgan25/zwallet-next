@@ -15,3 +15,8 @@ export const topUpTransaction = (body, token) => {
     const urlTopup = URL + '/transaction/top-up'
     return axios.post(urlTopup, body, { headers: { Authorization: `Bearer ${token}` } })
 }
+
+export const transfer = (body, token) => {
+    const urlTransfer = URL + '/transaction/transfer'
+    return axios.post(urlTransfer, body, { headers: { Authorization: `Bearer ${token}` } })
+}

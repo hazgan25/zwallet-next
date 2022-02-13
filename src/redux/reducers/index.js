@@ -6,13 +6,16 @@ import storage from 'redux-persist/lib/storage'
 import dashboarReducer from './dashboard'
 import historyReducer from './history'
 import topupReducer from './topup'
+import { transerUserReducer, searchReceiverReducer } from './transfer'
 
 const reducers = combineReducers({
     auth: authReducer,
     user: usersReducer,
     dashboad: dashboarReducer,
     history: historyReducer,
-    topup: topupReducer
+    topup: topupReducer,
+    userTransfer: transerUserReducer,
+    searchReceiver: searchReceiverReducer
 })
 
 const rootReducer = (state, action) => {
