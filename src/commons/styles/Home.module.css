@@ -1,6 +1,5 @@
 .balance-box{
   background: #6379F4;
-  border-radius: 20px;
 }
 
 .balance-text{
@@ -77,6 +76,7 @@ text-align: center;
   /* padding-bottom: 12px; */
   top: 20px;
   margin-bottom: 23px;
+  height: 95%;
 }
 .bi-arrow-down{
   font-weight: bold;

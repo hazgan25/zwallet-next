@@ -72,7 +72,6 @@ const Home = () => {
                     </div>
 
                     <div className='row'>
-
                         <div className='col-sm'>
                             <div className={`${styles['finance-box']}`}>
                                 <div className='row container justify-content-between'>
