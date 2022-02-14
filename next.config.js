@@ -13,6 +13,7 @@ module.exports = {
       { source: '/home/transfer', destination: '/transfer' },
       { source: '/home/profile', destination: '/profile' },
       { source: '/home/history', destination: '/history' },
+      { source: '/home/confirmation', destination: '/confirmation' }
     ]
   }
 }

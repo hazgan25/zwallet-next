@@ -30,7 +30,7 @@ const History = () => {
                                 }}
                                 alt='avatar' className='rounded' height={56} width={56} objectFit='cover' />
                             <p className={`${styles['name-text']}`}>{data.fullName}</p>
-                            <p className={`${styles['status-text']}`}>{data.type === 'send' ? 'transfer' : data.type}</p>
+                            <p className={`${styles['status-text']}`}>{data.type === 'send' ? 'transfer' : data.status === 'pending' ? `Pending ${data.type}` : data.type}</p>
                         </div>
                     ))
                 }
@@ -43,7 +43,7 @@ const History = () => {
                 {Array.isArray(historyData) && historyData.length > 0 &&
                     historyData.map((data, idx) => (
                         <div key={idx}>
-                            <p className={`${data.type === 'send' ? 'text-danger' : 'text-success'} ${styles['transaction-payment']}`}>
+                            <p className={`${data.type === 'send' ? 'text-danger' : data.status === 'pending' ? 'text-secondary' : 'text-success'} ${styles['transaction-payment']}`}>
                                 {`${data.type === 'send' ? `-RP.${formatRupiah(data.amount)}` : `+RP.${formatRupiah(data.amount)}`}`}
                             </p>
                         </div>

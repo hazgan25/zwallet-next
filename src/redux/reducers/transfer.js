@@ -37,7 +37,7 @@ export const transerUserReducer = (prevState = initialStateTransferUser, action)
             }
 
         case transferUser.concat('_', Rejected):
-            const errData = payload
+            const errData = action.payload
             return {
                 ...prevState,
                 isPending: false,
@@ -50,6 +50,7 @@ export const transerUserReducer = (prevState = initialStateTransferUser, action)
                 ...prevState.transaction,
                 ...action.payload
             }
+            // console.log(transaction)
             return {
                 ...prevState,
                 isPending: false,
@@ -85,11 +86,12 @@ export const searchReceiverReducer = (prevState = initalStateReceiver, action) =
 
         case searchReceiver.concat('_', Fulfilled):
             const data = action.payload.data
+            // console.log(data)
             return {
                 ...prevState,
                 isPending: false,
                 isFulfilled: true,
-                data: data.data,
+                data: data,
             }
 
         case searchReceiver.concat('_', Rejected):

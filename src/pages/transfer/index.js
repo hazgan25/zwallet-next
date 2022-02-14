@@ -20,8 +20,9 @@ const Transfer = () => {
     const [param, setParam] = useState({})
     const { token } = state.auth.userData
     // console.log(state.searchReceiver.data)
-    // console.log(state.searchReceiver)
-    const dataArr = state.searchReceiver.data
+    // console.log(state.searchReceiver.data.data.data)
+    const dataArr = state.searchReceiver.data.data
+    // console.log(state.searchReceiver.data.data)
 
     const handleClick = (id) => {
         router.push(`/transfer/${id}`)
@@ -73,7 +74,7 @@ const Transfer = () => {
                                     </div>
                                 ))
                             }
-                            <h5 style={{ position: 'relative', top: '23px', textAlign: 'center', marginBottom: '23px' }}>{dataArr.length == 0 ? 'Not Found' : ''}</h5>
+                            <h5 style={{ position: 'relative', top: '23px', textAlign: 'center', marginBottom: '23px' }}>{dataArr && dataArr.length == 0 ? 'Not Found' : ''}</h5>
                         </div>
                     </div>
                 </MenuHome>
