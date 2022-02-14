@@ -57,6 +57,8 @@ const Confirmation = () => {
                                     <p>{notes}</p>
                                 </div>
                             </div>
+                            <button className={`btn btn-primary ${styles['button']}`}>Continue</button>
+
                         </div>
                     </div>
                 </MenuHome>

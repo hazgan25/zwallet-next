@@ -96,8 +96,10 @@
         display: inline-block;
     }
     .logout{
+        position: absolute;
         text-align: left;
         left: 12px;
-        margin-top: 268px;
+        /* margin-top: 268px; */
+        bottom: 32px;
     }
 }
