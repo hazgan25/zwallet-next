@@ -24,7 +24,6 @@ const Login = () => {
             email: e.target.email.value,
             password: e.target.password.value
         }
-        // props.loginDispatch(body)
         dispatch(loginAction(body))
     }
 
@@ -33,12 +32,11 @@ const Login = () => {
             console.log('ini err', auth.errData)
         }
         if (auth.isFulfilled) {
-            // console.log(props.auth.userData.pin);
             if (auth.userData.pin === null) {
                 router.push('/user/pin')
-
+            } else {
+                router.push('/home')
             }
-            router.push('/home')
         }
     })
 
@@ -87,21 +85,5 @@ const Login = () => {
         </Layout >
     )
 }
-
-// const mapStateToProps = (state) => {
-//     return {
-//         auth: state.auth
-//     }
-// }
-
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         loginDispatch: (body) => {
-//             dispatch(loginAction(body))
-//         }
-//     }
-// }
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Login)
 
 export default Login

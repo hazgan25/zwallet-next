@@ -25,7 +25,6 @@ const Register = () => {
         }
         register(body)
             .then((res) => {
-                console.log(res.data.msg);
                 Swal.fire(
                     {
                         title: `${res.data.msg}`,
@@ -34,7 +33,9 @@ const Register = () => {
                         timer: 15000
                     }
                 )
-                router.push('/login')
+                setTimeout(() => {
+                    router.push('/login')
+                }, 4000)
             })
             .catch((err) => {
                 console.log(err.response.data.msg);

@@ -1,24 +1,34 @@
 import styles from 'src/commons/styles/Header.module.css'
 import Image from 'next/image'
 import photoDefault from 'src/assets/img/profile-default.png'
+import { useRouter } from 'next/router'
 
 import { personalUser } from 'src/redux/actions/user'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
-
 
 const Header = () => {
     const dispatch = useDispatch()
     const state = useSelector((state) => state)
     const { id, token } = state.auth.userData
 
+    const router = useRouter()
+
     const { userData } = state.user
     const { image, firstName, lastName, noTelp } = userData
-    // console.log(userData)
 
     useEffect(() => {
-        dispatch(personalUser(id, token))
-    }, [dispatch, id, token])
+        if (token) {
+            dispatch(personalUser(id, token))
+                .catch((err) => {
+                    if (err) {
+                        router.replace('/')
+                    }
+                })
+        } else {
+            router.replace('/')
+        }
+    }, [dispatch, id, token, router])
     return (
         <>
             <nav className={`navbar navbar-light bg-white shadow ${styles['navbar-light']}`}>
@@ -27,16 +37,7 @@ const Header = () => {
 
                     <div className='d-flex'>
                         <div className={`${styles['photo-profile']}`}>
-                            <Image src={
-                                !image ? photoDefault :
-                                    !`${process.env.NEXT_PUBLIC_IMAGE_USER}/${image}` ? photoDefault :
-                                        `${process.env.NEXT_PUBLIC_IMAGE_USER}/${image}`
-                            }
-                                placeholder='blur'
-                                blurDataURL={photoDefault}
-                                onError={() => {
-                                    photoDefault
-                                }}
+                            <Image src={!image ? photoDefault : `${process.env.NEXT_PUBLIC_IMAGE_USER}/${image}`}
                                 alt='avatar' width='52' height='52' objectFit='cover' className={`${styles['radius-photo']}`} />
                         </div>
 

@@ -1,25 +1,67 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Layout from 'src/commons/components/Layout'
 import Rectangle from 'src/commons/components/Rectangle'
 import style from 'src/commons/styles/pin.module.css'
+import Swal from 'sweetalert2'
+
+import { useRouter } from 'next/router'
+import { useSelector, useDispatch } from 'react-redux'
+import { pinUser } from 'src/modules/utils/users'
+import { personalUser } from 'src/redux/actions/user'
 
 const Pin = () => {
-    const [pin, setPin] = useState({})
-    const inputPin = (event) => {
-        if (event.target.value) {
-            const pinNext = document.getElementById(`pin-${parseInt(event.target.name, 10) + 1}`)
-            if (pinNext !== null) { pinNext.focus() }
+    const state = useSelector(state => state)
+    const dispatch = useDispatch()
+    const router = useRouter()
+
+    console.log(router)
+
+    const { token, pin, id } = state.auth.userData
+
+    const [pin1, setPin1] = useState('')
+    const [pin2, setPin2] = useState('')
+    const [pin3, setPin3] = useState('')
+    const [pin4, setPin4] = useState('')
+    const [pin5, setPin5] = useState('')
+    const [pin6, setPin6] = useState('')
+
+    useEffect(() => {
+        if (!token) {
+            router.replace('/')
         }
-        setPin = ({ ...pin, [`pin${event.target.name}`]: event.target.value })
+        if (token && pin !== null) {
+            router.push('/home')
+        }
+    }, [token, router, pin])
+
+    const pinHandler = () => {
+        const body = {
+            pin: pin1 + pin2 + pin3 + pin4 + pin5 + pin6
+        }
+        pinUser(id, body, token)
+            .then((res) => {
+                Swal.fire({
+                    title: res.data.msg,
+                    text: 'Please Login Again',
+                    icon: 'success'
+                })
+                setTimeout(() => {
+                    router.replace('/logout')
+                }, 4000)
+            })
+            .catch(({ ...err }) => {
+                Swal.fire({
+                    title: 'There an Error',
+                    text: `${err.response.data.msg}`,
+                    icon: 'error'
+                })
+            })
     }
 
-    const handleSubmit = () => {
-        const allPin = pin.pin1 + pin.pin2 + pin.pin3 + pin.pin4 + pin.pin5 + pin.pin6
-    }
     return (
-        <Layout title='Zwallet - Create Pin'>
+        <Layout title={'Zwallet - Create Pin'}>
             <Rectangle>
-                <div className='container'>
+                <main className='container'>
                     <h4 className={`start-access-text ${style['start-access-text']}`}>
                         Secure Your Account, Your Wallet,
                         and Your Data With 6 Digits PIN
@@ -29,30 +71,30 @@ const Pin = () => {
                         Create 6 digits pin to secure all your money and your data in Zwallet app.
                         Keep it secret and don’t tell anyone about your Zwallet account password and the PIN.
                     </p>
-                    <form id='container-fluid'>
+                    <section className='container-fluid'>
                         <div className={`row justify-content-between m-0 ${style['justify-content-between']}`}>
                             <div className='col-1'>
-                                <input className={`${style['input-pin']}`} maxLength='1' name='1' id='pin-1' onChange={(event) => inputPin(event)} />
+                                <input className={`${style['input-pin']}`} maxLength='1' onChange={e => setPin1(e.target.value)} />
                             </div>
                             <div className='col-1'>
-                                <input className={`${style['input-pin']}`} maxLength='1' name='2' id='pin-2' onChange={(event) => inputPin(event)} />
+                                <input className={`${style['input-pin']}`} maxLength='1' onChange={e => setPin2(e.target.value)} />
                             </div>
                             <div className='col-1'>
-                                <input className={`${style['input-pin']}`} maxLength='1' name='3' id='pin-3' onChange={(event) => inputPin(event)} />
+                                <input className={`${style['input-pin']}`} maxLength='1' onChange={e => setPin3(e.target.value)} />
                             </div>
                             <div className='col-1'>
-                                <input className={`${style['input-pin']}`} maxLength='1' name='4' id='pin-4' onChange={(event) => inputPin(event)} />
+                                <input className={`${style['input-pin']}`} maxLength='1' onChange={e => setPin4(e.target.value)} />
                             </div>
                             <div className='col-1'>
-                                <input className={`${style['input-pin']}`} maxLength='1' name='5' id='pin-5' onChange={(event) => inputPin(event)} />
+                                <input className={`${style['input-pin']}`} maxLength='1' onChange={e => setPin5(e.target.value)} />
                             </div>
                             <div className='col-1'>
-                                <input className={`${style['input-pin']}`} maxLength='1' name='6' id='pin-6' onChange={(event) => inputPin(event)} />
+                                <input className={`${style['input-pin']}`} maxLength='1' onChange={e => setPin6(e.target.value)} />
                             </div>
                         </div>
-                        <button className={`btn-auth ${style['btn-auth']}`} onClick={handleSubmit}>Confirm</button>
-                    </form>
-                </div>
+                        <button className={`btn-auth ${style['btn-auth']}`} onClick={pinHandler}>Confirm</button>
+                    </section>
+                </main>
             </Rectangle>
         </Layout>
     )

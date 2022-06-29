@@ -13,7 +13,7 @@ const Private = () => {
             'you have to login first',
             'question'
         )
-        router.replace('/auth/login')
+        router.replace('/')
     }
 
 }

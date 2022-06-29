@@ -1,10 +1,15 @@
 import axios from 'axios'
-const URL = process.env.NEXT_PUBLIC_HOST
+const URL = process.env.NEXT_PUBLIC_HOST + '/user'
 
 export const personalData = (id, token) => {
     // console.log(id, token);
-    const urlPersonalData = URL + '/user/profile/' + id
+    const urlPersonalData = URL + '/profile/' + id
     return axios.get(urlPersonalData, { headers: { Authorization: `Bearer ${token}` } })
+}
+
+export const pinUser = (id, body, token) => {
+    const urlPinUser = URL + `/pin/${id}`
+    return axios.patch(urlPinUser, body, { headers: { Authorization: `Bearer ${token}` } })
 }
 
 export const searchReceiverUser = (param, token) => {
@@ -14,6 +19,6 @@ export const searchReceiverUser = (param, token) => {
         page: param.page ?? '1',
         limit: param.limit ?? '5'
     }
-    const urlSearchReceiver = URL + `/user?page=${queryParam.page}&limit=${queryParam.limit}&search=${queryParam.search}&sort=${queryParam.sort}`
+    const urlSearchReceiver = URL + `?page=${queryParam.page}&limit=${queryParam.limit}&search=${queryParam.search}&sort=${queryParam.sort}`
     return axios.get(urlSearchReceiver, { headers: { Authorization: `Bearer ${token}` } })
 }

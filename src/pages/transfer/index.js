@@ -58,8 +58,8 @@ const Transfer = () => {
                                             {/* {console.log(data.image)} */}
                                             <Image src={
                                                 !data.image ? photoDefault :
-                                                    !`${process.env.NEXT_PUBLIC_IMAGE_USER}/${data.image}` ? photoDefault :
-                                                        `${process.env.NEXT_PUBLIC_IMAGE_USER}/${data.image}`
+                                                    !`${process.env.NEXT_PUBLIC_HOST}/${data.image}` ? photoDefault :
+                                                        `${process.env.NEXT_PUBLIC_HOST}/${data.image}`
                                             }
                                                 placeholder='blur'
                                                 blurDataURL={photoDefault}

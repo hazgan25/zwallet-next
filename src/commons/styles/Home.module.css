@@ -1,8 +1,10 @@
-.balance-box{
-  background: #6379F4;
+.balance-box {
+  background: #6379f4;
+
+  border-radius: 20px;
 }
 
-.balance-text{
+.balance-text {
   position: relative;
   font-family: Nunito Sans;
   font-style: normal;
@@ -10,36 +12,36 @@
   font-size: 18px;
   line-height: 31px;
 
-  color: #E0E0E0;
+  color: #e0e0e0;
   text-align: center;
 
   top: 15px;
 }
 
-.money-text{
+.money-text {
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: bold;
   font-size: 40px;
   line-height: 55px;
-  
+
   text-align: center;
-  
-  color: #FFFFFF;
+
+  color: #ffffff;
 }
 
-.phone-text{
+.phone-text {
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
   line-height: 19px;
-text-align: center;
+  text-align: center;
 
-  color: #DFDCDC;
+  color: #dfdcdc;
 }
 
-.btn-payment{
+.btn-payment {
   position: relative;
   font-family: Nunito Sans;
   font-style: normal;
@@ -51,72 +53,73 @@ text-align: center;
 
   background: rgba(255, 255, 255, 0.2);
 
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
 
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   box-sizing: border-box;
   border-radius: 10px;
 
   margin-bottom: 12px;
-
 }
 
-.btn-text-position{
+.btn-text-position {
   position: relative;
   left: 12px;
 }
 
 /* financial */
-.finance-box{
+.finance-box {
   position: relative;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
   border-radius: 5px;
   /* padding-bottom: 12px; */
   top: 20px;
   margin-bottom: 23px;
   height: 95%;
+
+  border-radius: 20px;
 }
-.bi-arrow-down{
+.bi-arrow-down {
   font-weight: bold;
   font-size: 28px;
-  color: #1EC15F;
+  color: #1ec15f;
 }
-.bi-arrow-up{
+.bi-arrow-up {
   font-weight: bold;
   font-size: 28px;
-  color: #FF5B37;
+  color: #ff5b37;
 }
-.financial-text{
+.financial-text {
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 19px;
-  
-  color: #6A6A6A;
+
+  color: #6a6a6a;
 }
-.financial-money-text{
+.financial-money-text {
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: bold;
   font-size: 10px;
   /* line-height: 25px; */
-  
-  color: #3A3D42;
+
+  color: #3a3d42;
 }
 
 /* chart/graph */
-.data-update{
+.data-update {
   height: 223px;
   width: 14px;
   /* height: 3px; */
 
-  background: #6379F4;
+  background: #6379f4;
   border-radius: 15px;
 }
-.day-text{
+.day-text {
   position: relative;
   font-family: Nunito Sans;
   font-style: normal;
@@ -124,48 +127,52 @@ text-align: center;
   font-size: 14px;
   line-height: 19px;
 
-  color: #8F8F8F;
+  color: #8f8f8f;
   bottom: 3px;
   padding-top: 12px;
 }
 
-.range-data{
+.range-data {
   position: relative;
   margin-right: -16px;
   right: 10px;
 }
 
 /* transaction history */
-.transaction-history-box{
+.transaction-history-box {
   position: relative;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
   border-radius: 5px;
   /* padding-bottom: 12px; */
   top: 20px;
   margin-bottom: 23px;
   padding-bottom: 34px;
+
+  border-radius: 20px;
+
+  height: 95%;
 }
-.transaction-history-text{
+.transaction-history-text {
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 25px;
 
-  color: #3A3D42;
+  color: #3a3d42;
 }
-.see-all-text{
+.see-all-text {
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
   line-height: 19px;
 
-  color: #6379F4;
+  color: #6379f4;
   cursor: pointer;
 }
-.name-text{
+.name-text {
   position: relative;
 
   font-family: Nunito Sans;
@@ -173,16 +180,15 @@ text-align: center;
   font-weight: bold;
   font-size: 16px;
   line-height: 22px;
-  /* width: 83px; */
+  width: 183px;
   /* identical to box height */
-  
-  
-  color: #4D4B57;
+
+  color: #4d4b57;
 
   left: 63px;
   bottom: 58px;
 }
-.status-text{
+.status-text {
   position: relative;
 
   font-family: Nunito Sans;
@@ -191,19 +197,21 @@ text-align: center;
   font-size: 14px;
   line-height: 19px;
 
-  color: #7A7886;
+  color: #7a7886;
+
+  width: 183px;
 
   left: 63px;
   bottom: 68px;
 }
-.photo-users{
+.photo-users {
   position: relative;
   height: 56px;
   width: 56px;
   background-blend-mode: normal;
   margin-top: 28px;
 }
-.transaction-payment{
+.transaction-payment {
   position: relative;
   font-family: Nunito Sans;
   font-style: normal;
@@ -212,52 +220,60 @@ text-align: center;
   line-height: 12px;
   width: 112px;
 
-  top: 32px;
-  right: 20px;
+  display: inline-block;
+
+  /* top: 32px; */
+  top: 72px;
+  right: 50px;
+  /* right: 20px; */
   margin-bottom: 62px;
 }
 
 /* tablet */
-@media (min-width:768px){
-  .balance-text{
+@media (min-width: 768px) {
+  .balance-text {
     text-align: left;
   }
-  .money-text{
+  .money-text {
     text-align: left;
   }
-  .phone-text{
+  .phone-text {
     text-align: left;
   }
-  .btn-payment{
+  .btn-payment {
     width: 162px;
     height: 57px;
     top: 13px;
     left: 23px;
   }
-  .bi{
+  .bi {
     position: relative;
     right: 10px;
   }
-  .range-data{
+  .range-data {
     margin-right: -20px;
   }
-  .transaction-payment{
-    top: 42px;
-    right: 25px;
+  .transaction-payment {
+    /* top: 42px; */
+    /* right: 25px; */
     margin-bottom: 68px;
   }
 }
 
 /* laptop S */
-@media(min-width:1024px){
-  .btn-payment{
+@media (min-width: 1024px) {
+  .btn-payment {
     left: 123px;
+  }
+  .transaction-payment {
+    top: 22px;
+    right: 23px;
   }
 }
 
 /* laptop M */
-@media(min-width:1200px){
-  .btn-payment{
+@media (min-width: 1200px) {
+  .btn-payment {
     width: 262px;
     height: 57px;
     left: 93px;
@@ -265,8 +281,8 @@ text-align: center;
 }
 
 /* laptop L */
-@media(min-width:1440px){
-  .btn-payment{
+@media (min-width: 1440px) {
+  .btn-payment {
     width: 262px;
     height: 57px;
     left: 153px;
