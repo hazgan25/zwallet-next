@@ -1,120 +1,120 @@
-.navbar-light{
-    border-radius: 0px 0px 25px 25px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+.navbar-light {
+  border-radius: 0px 0px 25px 25px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-.brand-text{
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: bold;
+.brand-text {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: bold;
 
-    color: #6379F4 !important;
+  color: #6379f4 !important;
 }
-.photo-profile{
-    position: relative;
-    right: 22px;
-    width: 42px;
-    /* top: px; */
-    left: 13px;
-    /* left: 123px; */
+.photo-profile {
+  position: relative;
+  right: 22px;
+  width: 42px;
+  /* top: px; */
+  left: 13px;
+  /* left: 123px; */
 }
-.radius-photo{
-    border-radius: 10px;
-}
-
-.name-profile{
-    position: absolute;
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 10px;
-    
-    text-align: center;
-    
-    color: #3A3D42;
-    top: 10px;
-    right: 123px;
+.radius-photo {
+  border-radius: 10px;
 }
 
-.phone-number{
-    position: absolute;
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 10px;
+.name-profile {
+  position: absolute;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
 
-    text-align: center;
-    color: rgba(58, 61, 66, 0.9);
-    right: 113px;
-    top: 30px;
+  text-align: center;
+
+  color: #3a3d42;
+  top: 10px;
+  right: 123px;
 }
 
-.positition-bell{
-    position: relative;
-    /* left: 123px; */
-    right: 63px;
-    top: 4px;
+.phone-number {
+  position: absolute;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+
+  text-align: center;
+  color: rgba(58, 61, 66, 0.9);
+  right: 113px;
+  top: 30px;
+}
+
+.positition-bell {
+  position: relative;
+  /* left: 123px; */
+  right: 63px;
+  top: 4px;
 }
 
 /* lablet */
-@media(min-width:768px){
-    .brand-text{
-        font-size: 29px;
-        line-height: 40px;
-    }
-    .photo-profile{
-        /* position: relative; */
-        top: 8px;
-        left: -33px;
-    }
-    .name-profile{
-        position: relative;
-        /* font-size: 18px;
+@media (min-width: 768px) {
+  .brand-text {
+    font-size: 29px;
+    line-height: 40px;
+  }
+  .photo-profile {
+    /* position: relative; */
+    top: 8px;
+    left: -33px;
+  }
+  .name-profile {
+    position: relative;
+    /* font-size: 18px;
         line-height: 31px; */
-        text-align: left;
+    text-align: left;
 
-        right: 15px;
-        top: 12px;
-    }
-    .phone-number{
-        position: relative;
-        /* font-size: 13px;
+    right: 15px;
+    top: 12px;
+  }
+  .phone-number {
+    position: relative;
+    /* font-size: 13px;
         line-height: 24px; */
-        text-align: left;
-        right: 15px;
-        top: -1px;
-        /* bottom: 105px; */
-    }
-    .positition-bell{
-        right: 8px;
-        top: 14px;
-    }
+    text-align: left;
+    right: 15px;
+    top: -1px;
+    /* bottom: 105px; */
+  }
+  .positition-bell {
+    right: 8px;
+    top: 14px;
+  }
 }
 
 /* laptop S */
-@media(min-width:1024px){
-    .brand-text{
-        position: relative;
-        left: 50px;
-    }
-    .photo-profile{
-        left: -113px;
-        top: 20px;
-    }
-    .name-profile{
-        font-size: 18px;
-        line-height: 31px;
-        right: 80px;
-        top: 15px;
-    }
-    .phone-number{
-        font-size: 13px;
-        line-height: 24px;
-        right: 80px;
-        top: -5px;
-    }
-    .positition-bell{
-        right: 60px;
-        top:28px;
-    }
+@media (min-width: 1024px) {
+  .brand-text {
+    position: relative;
+    left: 50px;
+  }
+  .photo-profile {
+    left: -113px;
+    top: 20px;
+  }
+  .name-profile {
+    font-size: 18px;
+    line-height: 31px;
+    right: 80px;
+    top: 15px;
+  }
+  .phone-number {
+    font-size: 13px;
+    line-height: 24px;
+    right: 80px;
+    top: -5px;
+  }
+  .positition-bell {
+    right: 60px;
+    top: 28px;
+  }
 }

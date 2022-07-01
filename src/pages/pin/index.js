@@ -5,13 +5,11 @@ import style from 'src/commons/styles/pin.module.css'
 import Swal from 'sweetalert2'
 
 import { useRouter } from 'next/router'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { pinUser } from 'src/modules/utils/users'
-import { personalUser } from 'src/redux/actions/user'
 
 const Pin = () => {
     const state = useSelector(state => state)
-    const dispatch = useDispatch()
     const router = useRouter()
 
     console.log(router)

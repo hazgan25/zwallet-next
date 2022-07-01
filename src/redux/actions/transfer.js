@@ -18,9 +18,9 @@ export const transferParamAction = (param) => {
     }
 }
 
-export const transferFeatureAction = (id, token) => {
+export const transferFeatureAction = (body, token) => {
     return {
         type: transferFeature,
-        payload: transfer(id, token)
+        payload: transfer(body, token)
     }
 }

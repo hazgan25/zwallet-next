@@ -1,110 +1,137 @@
-.transfer-box{
-    background: #FFFFFF;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
-    border-radius: 5px;
-    padding-top: 12px;
-    padding-bottom: 70%;
-    
+.transfer-box {
+  background: #fff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  padding-top: 12px;
+  padding-bottom: 130vh;
 }
 
-.transfer-text{
-    position: relative;
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 25px;
+.transfer-text {
+  position: relative;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
 
-    color: #3A3D42;
+  color: #3a3d42;
 
-    top: 23px;
+  top: 23px;
 }
 
-.box{
-    position: relative;
-    background: #FFFFFF;
-    height: 80px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
-    border-radius: 5px;
+.box {
+  position: relative;
+  background: #ffffff;
+  height: 80px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
 
-    cursor: pointer;
-    
-    top: 13px;
+  cursor: pointer;
+
+  top: 13px;
+  /* height: 10%; */
 }
 
-.wrapper-user{
-    position: relative;
-    height: 56px;
-    width: 56px;
-    background-blend-mode: normal;
-    margin-top: 28px;
-    top: 12px;
-    left: 12px;
+.wrapper-user {
+  position: relative;
+  height: 56px;
+  width: 56px;
+  background-blend-mode: normal;
+  margin-top: 28px;
+  top: 12px;
+  left: 12px;
 }
 
-.name-text{
-    position: relative;
+.name-text {
+  position: relative;
 
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 25px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
 
-    width: 223px;
-    color: #4D4B57;
+  width: 223px;
+  color: #4d4b57;
 
-    left: 63px;
-    bottom: 58px;
+  left: 63px;
+  bottom: 58px;
 }
 
-.phone-text{
-    position: relative;
+.phone-text {
+  position: relative;
 
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 19px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
 
-    width: 123px;
-    color: #7A7886;
+  width: 123px;
+  color: #7a7886;
 
-    left: 63px;
-    bottom: 68px;
+  left: 63px;
+  bottom: 68px;
 }
 
-.details-text{
-    position: relative;
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 25px;
-    /* identical to box height */
+.details-text {
+  position: relative;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  /* identical to box height */
 
+  /* Zwallet/Dark */
 
-    /* Zwallet/Dark */
-
-    color: #3A3D42;
-    top: 63px;
+  color: #3a3d42;
+  top: 63px;
 }
 
-.box-detail{
-    position: relative;
-    background: #FFFFFF;
-    height: 80px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
-    border-radius: 5px;
+.box-detail {
+  position: relative;
+  background: #ffffff;
+  height: 90px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
 
-    cursor: pointer;
-    
-    top: 83px;
-    margin-bottom: 23px;
+  cursor: pointer;
+
+  top: 83px;
+  padding: 10px;
+  margin-bottom: 23px;
 }
 
-.button{
-    position: absolute;
-    bottom: 12px;
-    right: 23px;
+.button {
+  position: absolute;
+  bottom: 12px;
+  right: 23px;
+}
+
+.input-pin {
+  position: relative;
+  height: 45px;
+  width: 43px;
+  background: #ffffff;
+
+  border: 1px solid rgba(169, 169, 169, 0.6);
+  box-sizing: border-box;
+  box-shadow: 0px 10px 75px rgba(147, 147, 147, 0.1);
+  border-radius: 10px;
+
+  text-align: center;
+  right: 13px;
+}
+
+@media (min-width: 1280px) {
+  .transfer-box {
+    padding-bottom: 110vh;
+  }
+}
+
+@media (min-width: 2560px) {
+  .transfer-box {
+    padding-bottom: 60vh;
+  }
 }

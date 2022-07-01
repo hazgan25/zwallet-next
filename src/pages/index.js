@@ -22,8 +22,22 @@ import arrowRight from 'src/assets/svg/arrow-right.svg'
 import arrowLeft from 'src/assets/svg/arrow-left.svg'
 
 import dummyProfile from 'src/assets/img/dummy-profile-1.jpg'
+import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
+import { useRouter } from 'next/router'
 
 const Landing = () => {
+  const state = useSelector(state => state)
+  const router = useRouter()
+  const { auth } = state
+  const { token } = auth.userData
+
+  useEffect(() => {
+    if (token !== null) {
+      router.push('/home')
+    }
+  }, [router, token])
+
   return (
     <Layout title='Zwallet - Digital Wallet'>
       <header className={styles['background-blue-liner']}>

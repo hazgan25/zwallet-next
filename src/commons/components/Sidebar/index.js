@@ -12,10 +12,10 @@ const Sidebar = () => {
     const onLogout = () => {
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
-                confirmButton: 'btn btn-primary',
+                confirmButton: 'btn btn-danger',
                 cancelButton: 'btn btn-secondary'
             },
-            buttonsStyling: false
+            buttonsStyling: true
         })
 
         swalWithBootstrapButtons.fire({

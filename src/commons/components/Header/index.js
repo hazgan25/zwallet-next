@@ -38,7 +38,10 @@ const Header = () => {
                     <div className='d-flex'>
                         <div className={`${styles['photo-profile']}`}>
                             <Image src={!image ? photoDefault : `${process.env.NEXT_PUBLIC_IMAGE_USER}/${image}`}
-                                alt='avatar' width='52' height='52' objectFit='cover' className={`${styles['radius-photo']}`} />
+                                alt='avatar' width='52' height='52' objectFit='cover' className={`${styles['radius-photo']}`} onError={(e) => {
+                                    e.currentTarget.onerror = null
+                                    currentTarget.src = `${photoDefault}`
+                                }} />
                         </div>
 
                         <div>

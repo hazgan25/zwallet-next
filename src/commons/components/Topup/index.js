@@ -1,7 +1,6 @@
-import { Modal, Button } from 'react-bootstrap'
-import { useState, useEffect } from 'react'
+import { Modal } from 'react-bootstrap'
+import { useState } from 'react'
 import styles from 'src/commons/styles/Topup.module.css'
-import { connect } from 'react-redux'
 import { topUpAction } from 'src/redux/actions/topup'
 import Swal from 'sweetalert2'
 import { useDispatch, useSelector } from 'react-redux'
@@ -15,7 +14,6 @@ const Topup = ({ children }) => {
 
     const state = useSelector((state) => state)
     const { token } = state.auth.userData
-
     const { data } = state.topup.dataTopup
 
     const handleAmount = (e) => {

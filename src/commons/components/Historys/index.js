@@ -19,7 +19,10 @@ const History = () => {
                         <div className={`${styles['photo-users']}`} key={idx}>
                             {/* {console.log(data)} */}
                             <Image src={!data.image ? photoDefault : `${process.env.NEXT_PUBLIC_IMAGE_USER}/${data.image}`}
-                                alt='avatar' className='rounded' height={56} width={56} objectFit='cover' />
+                                alt='avatar' className='rounded' height={56} width={56} objectFit='cover' onError={(e) => {
+                                    e.currentTarget.onerror = null
+                                    currentTarget.src = `${photoDefault}`
+                                }} />
                             <p className={`${styles['name-text']}`}>{data.fullName}</p>
                             <p className={`${styles['status-text']}`}>{data.type === 'send' ? 'transfer' : data.status === 'pending' ? `Pending ${data.type}` : data.type}</p>
                         </div>

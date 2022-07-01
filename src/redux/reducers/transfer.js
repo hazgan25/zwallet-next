@@ -4,7 +4,10 @@ import { ActionType } from 'redux-promise-middleware'
 const initialStateTransferUser = {
     userData: {},
     transaction: {
+        id: null,
+        senderId: null,
         receiverId: null,
+        balance: 0,
         amount: 0,
         notes: ''
     },
@@ -50,7 +53,6 @@ export const transerUserReducer = (prevState = initialStateTransferUser, action)
                 ...prevState.transaction,
                 ...action.payload
             }
-            // console.log(transaction)
             return {
                 ...prevState,
                 isPending: false,
@@ -61,48 +63,3 @@ export const transerUserReducer = (prevState = initialStateTransferUser, action)
         default: return prevState
     }
 }
-
-
-const initalStateReceiver = {
-    data: [],
-    isPending: false,
-    isFulfilled: false,
-    isRejected: false,
-    errData: {},
-}
-
-export const searchReceiverReducer = (prevState = initalStateReceiver, action) => {
-    const { searchReceiver } = ACTION_STRING
-    const { Pending, Fulfilled, Rejected } = ActionType
-
-    switch (action.type) {
-        case searchReceiver.concat('_', Pending):
-            return {
-                ...prevState,
-                isPending: true,
-                isFulfilled: false,
-                isRejected: false,
-            }
-
-        case searchReceiver.concat('_', Fulfilled):
-            const data = action.payload.data
-            // console.log(data)
-            return {
-                ...prevState,
-                isPending: false,
-                isFulfilled: true,
-                data: data,
-            }
-
-        case searchReceiver.concat('_', Rejected):
-            const errData = action.payload
-            return {
-                ...prevState,
-                isPending: false,
-                isRejected: true,
-                errData
-            }
-
-        default: return prevState
-    }
-} 
