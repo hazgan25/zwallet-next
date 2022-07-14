@@ -20,9 +20,9 @@ const Header = () => {
     useEffect(() => {
         if (token) {
             dispatch(personalUser(id, token))
-                .catch((err) => {
-                    if (err) {
-                        router.replace('/')
+                .catch(({ ...err }) => {
+                    if (err.response.data.msg === 'jwt expired') {
+                        router.replace('/logout')
                     }
                 })
         } else {

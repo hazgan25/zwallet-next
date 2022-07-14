@@ -3,17 +3,15 @@ import Layout from 'src/commons/components/Layout'
 import styles from 'src/commons/styles/Transfer.module.css'
 import Image from 'next/image'
 
-// import { searchReceiverAction } from 'src/redux/actions/user'
 import { searchReceiverUser } from 'src/modules/utils/users'
 import { useState, useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 
 import photoDefault from 'src/assets/img/profile-default.png'
 
 const Transfer = () => {
     const router = useRouter()
-    const dispatch = useDispatch()
     const state = useSelector((state) => state)
     const { token } = state.auth.userData
 
@@ -84,7 +82,6 @@ const Transfer = () => {
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                         fill="currentColor" className={`bi bi-arrow-bar-left mx-3 ${styles['bi']}`} viewBox="0 0 16 16"
                                         onClick={() => {
-                                            // console.log(data)
                                             if (page <= data.pagination.totalPage) {
                                                 setPage(page + 1)
                                             }

@@ -11,7 +11,6 @@ import styles from 'src/commons/styles/successTransfer.module.css'
 import { useSelector } from 'react-redux'
 import { getPDF } from 'src/modules/utils/export'
 
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 const SuccessTransfer = () => {
@@ -41,8 +40,6 @@ const SuccessTransfer = () => {
                 console.log(err)
             })
     }, [id, token, userTransfer.userData.id, router])
-
-    console.log(urlPdf)
 
     return (
         <>

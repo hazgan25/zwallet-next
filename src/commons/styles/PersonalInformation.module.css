@@ -1,0 +1,33 @@
+.information-box {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  padding-bottom: 20px;
+}
+
+.info-box {
+  background: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 12px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.manage-text {
+  position: relative;
+  right: 20px;
+  color: #6379f4;
+  cursor: pointer;
+}
+.manage-text:active {
+  color: #3a3d42;
+}
+
+@media (min-width: 768px) {
+  .info-text {
+    width: 50%;
+  }
+}

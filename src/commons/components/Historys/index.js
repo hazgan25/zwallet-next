@@ -17,7 +17,6 @@ const History = () => {
                 {Array.isArray(historyData) && historyData.length > 0 &&
                     historyData.map((data, idx) => (
                         <div className={`${styles['photo-users']}`} key={idx}>
-                            {/* {console.log(data)} */}
                             <Image src={!data.image ? photoDefault : `${process.env.NEXT_PUBLIC_IMAGE_USER}/${data.image}`}
                                 alt='avatar' className='rounded' height={56} width={56} objectFit='cover' onError={(e) => {
                                     e.currentTarget.onerror = null
@@ -38,7 +37,7 @@ const History = () => {
                     historyData.map((data, idx) => (
                         <div key={idx}>
                             <p className={`${data.type === 'send' ? 'text-danger' : data.status === 'pending' ? 'text-secondary' : 'text-success'} ${styles['transaction-payment']}`}>
-                                {`${data.type === 'send' ? `-RP.${formatRupiah(data.amount)}` : `+RP.${formatRupiah(data.amount)}`}`}
+                                {`${data.type === 'send' ? `-Rp.${formatRupiah(data.amount)}` : `+Rp.${formatRupiah(data.amount)}`}`}
                             </p>
                         </div>
                     ))

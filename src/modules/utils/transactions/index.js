@@ -11,6 +11,11 @@ export const historyTransaction = (param, token) => {
     return axios.get(urlHistoryTransaction, { headers: { Authorization: `Bearer ${token}` } })
 }
 
+export const historyTransactionFilter = (param, token) => {
+    const urlHistoryTransactionFilter = `${URL}/transaction/history?page=${param.page}&limit=${param.limit}&filter=${param.filter}`
+    return axios.get(urlHistoryTransactionFilter, { headers: { Authorization: `Bearer ${token}` } })
+}
+
 export const topUpTransaction = (body, token) => {
     const urlTopup = URL + '/transaction/top-up'
     return axios.post(urlTopup, body, { headers: { Authorization: `Bearer ${token}` } })
