@@ -3,8 +3,6 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Topup from 'src/commons/components/Topup'
 import Swal from 'sweetalert2'
-// import Topup from 'src/pages/topup'
-
 
 const Sidebar = () => {
     const router = useRouter()

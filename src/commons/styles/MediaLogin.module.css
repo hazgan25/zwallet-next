@@ -1,47 +1,47 @@
-@media(min-width:768px){
-    .start-access-text{
-        top: 63px;
-    }
-    .description-text{
-        top: 63px;
-    }
-    .logo{
-        top: 106px;
-    }
-    .input-auth{
-        top: 63px;
-    }
-    .btn-auth{
-        top: 73px;
-    }
-    .account-text{
-        top: 93px;
-    }
-    .bi-position{
-        top: 23px;
-    }
+@media (min-width: 768px) {
+  .start-access-text {
+    top: 63px;
+  }
+  .description-text {
+    top: 63px;
+  }
+  .logo {
+    top: 106px;
+  }
+  .input-auth {
+    top: 63px;
+  }
+  .btn-auth {
+    top: 73px;
+  }
+  .account-text {
+    top: 93px;
+  }
+  .bi-position {
+    top: 23px;
+  }
 }
 
-@media(min-width:1024px){
-    .start-access-text{
-        top: 101px;
-    }
-    .description-text{
-        top: 101px;
-    }
-    .logo{
-        top: 141px;
-    }
-    .input-auth{
-        top: 101px;
-    }
-    .btn-auth{
-        top: 121px;
-    }
-    .account-text{
-        top: 141px;
-    }
-    .bi-position{
-        top: 123px;
-    }
+@media (min-width: 1024px) {
+  .start-access-text {
+    top: 101px;
+  }
+  .description-text {
+    top: 101px;
+  }
+  .logo {
+    top: 141px;
+  }
+  .input-auth {
+    top: 101px;
+  }
+  .btn-auth {
+    top: 121px;
+  }
+  .account-text {
+    top: 141px;
+  }
+  .bi-position {
+    top: 123px;
+  }
 }

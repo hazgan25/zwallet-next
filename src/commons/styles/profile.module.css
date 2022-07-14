@@ -17,6 +17,7 @@
   position: relative;
   right: 12px;
   bottom: 22px;
+  cursor: pointer;
 }
 
 .box-info {

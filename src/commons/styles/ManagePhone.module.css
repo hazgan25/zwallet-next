@@ -1,0 +1,106 @@
+.manage-box {
+  background: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  padding-top: 12px;
+  padding-bottom: 22px;
+  height: 120vh;
+}
+
+.manage-text {
+  text-align: center;
+  padding-top: 30px;
+  margin-bottom: 20px;
+}
+
+.input-number {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 23px;
+
+  outline: 0;
+  border-width: 0 0 1px;
+  border-color: #000000;
+
+  width: 100%;
+  margin-top: 60px;
+  padding-left: 63px;
+}
+
+.bi {
+  position: absolute;
+  display: inline-block;
+  color: rgba(169, 169, 169, 0.6);
+
+  top: 55%;
+  left: 42px;
+}
+
+.btn-phone {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.btn-phone-active {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.btn-phone-active:active {
+  background: #6379f4;
+  color: #fff;
+}
+
+.info-text {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+  .manage-text {
+    text-align: left;
+  }
+  .info-text {
+    width: 50%;
+    text-align: left;
+  }
+  .input-number {
+    width: 431px;
+  }
+  .bi {
+    top: 343px;
+    left: 62px;
+  }
+  .btn-phone {
+    width: 431px;
+  }
+  .btn-phone-active {
+    width: 431px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bi {
+    top: 321px;
+    left: 21%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .bi {
+    left: 213px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .bi {
+    left: 283px;
+  }
+}

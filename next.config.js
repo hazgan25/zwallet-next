@@ -15,7 +15,9 @@ module.exports = {
       { source: '/home/history', destination: '/history' },
       { source: '/home/confirmation', destination: '/confirmation' },
       { source: '/transfer/success', destination: '/successTransfer' },
-      { source: '/personal/information', destination: '/personalInformation' }
+      { source: '/personal/information', destination: '/personalInformation' },
+      { source: '/manage/phone-number', destination: '/managePhoneNumber' },
+      { source: '/change-password', destination: '/changePassword' }
     ]
   }
 }

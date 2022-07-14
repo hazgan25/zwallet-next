@@ -5,6 +5,16 @@
   padding-bottom: 20px;
 }
 
+.personal-info-text {
+  text-align: center;
+  padding-top: 30px;
+  margin-bottom: 20px;
+}
+.info-text {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
 .info-box {
   background: #ffffff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
@@ -26,8 +36,47 @@
   color: #3a3d42;
 }
 
+.btn-save {
+  border: none;
+  padding: 12px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  width: 100%;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.btn-save-active {
+  border: none;
+  padding: 12px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  width: 100%;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.btn-save-active:active {
+  background: #6379f4;
+  color: #fff;
+}
+
 @media (min-width: 768px) {
   .info-text {
     width: 50%;
+    text-align: left;
+  }
+  .personal-info-text {
+    text-align: left;
+  }
+  .btn-query {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .btn-save {
+    width: auto;
+  }
+  .btn-save-active {
+    width: auto;
   }
 }

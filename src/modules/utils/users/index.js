@@ -26,3 +26,18 @@ export const searchReceiverUser = (param, token) => {
     const urlSearchReceiver = URL + `?page=${queryParam.page}&limit=${queryParam.limit}&search=${queryParam.search}&sort=${queryParam.sort}`
     return axios.get(urlSearchReceiver, { headers: { Authorization: `Bearer ${token}` } })
 }
+
+export const addChangePhoneUser = (id, body, token) => {
+    const urlAddChangePhoneUser = URL + `/profile/${id}`
+    return axios.patch(urlAddChangePhoneUser, body, { headers: { Authorization: `Bearer ${token}` } })
+}
+
+export const addChangePhotoUser = (id, body, token) => {
+    const urlAddChangePotoUser = URL + `/image/${id}`
+    return axios.patch(urlAddChangePotoUser, body, { headers: { Authorization: `Bearer ${token}` } })
+}
+
+export const changeNameUser = (id, body, token) => {
+    const urlChangeNameUser = URL + `/profile/${id}`
+    return axios.patch(urlChangeNameUser, body, { headers: { Authorization: `Bearer ${token}` } })
+}
