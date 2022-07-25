@@ -2,7 +2,7 @@
 
 <div style="text-align:center;position:relative; bottom:43px;margin-top:50px;" align="center">
 
-<img src='./src/assets/img/Zwallet.png' width='auto' />
+<img src='src/assets/img/Zwallet.png' width='auto' />
 
 [![next](https://img.shields.io/npm/v/next?label=next)](https://nextjs.org)
 [![react](https://img.shields.io/npm/v/react?label=react)](https://reactjs.org)
