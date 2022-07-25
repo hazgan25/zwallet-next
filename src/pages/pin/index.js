@@ -12,8 +12,6 @@ const Pin = () => {
     const state = useSelector(state => state)
     const router = useRouter()
 
-    console.log(router)
-
     const { token, pin, id } = state.auth.userData
 
     const [pin1, setPin1] = useState('')

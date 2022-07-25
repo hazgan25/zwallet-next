@@ -17,7 +17,9 @@ module.exports = {
       { source: '/transfer/success', destination: '/successTransfer' },
       { source: '/personal/information', destination: '/personalInformation' },
       { source: '/manage/phone-number', destination: '/managePhoneNumber' },
-      { source: '/change-password', destination: '/changePassword' }
+      { source: '/change-password', destination: '/changePassword' },
+      { source: '/change-pin', destination: '/changePin' },
+      { source: '/reset-password/:key', destination: '/resetPassword' }
     ]
   }
 }

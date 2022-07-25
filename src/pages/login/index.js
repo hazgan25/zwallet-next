@@ -38,7 +38,7 @@ const Login = () => {
                 router.push('/home')
             }
         }
-    })
+    }, [auth, router])
 
     return (
         <Layout title='Zwallet - Login '>

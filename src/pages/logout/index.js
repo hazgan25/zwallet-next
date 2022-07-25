@@ -10,7 +10,6 @@ const Logout = () => {
     const dispatch = useDispatch()
     const router = useRouter()
     const state = useSelector((state) => state)
-    // console.log(state)
     const { token } = state.auth.userData
 
     useEffect(() => {
@@ -25,29 +24,3 @@ const Logout = () => {
 }
 
 export default Logout
-// const Logout = (props) => {
-//     const router = useRouter()
-//     useEffect(() => {
-//         logout(props.token)
-//             .then((res) => {
-//                 console.log(res);
-//             })
-//             .catch((err) => {
-//                 console.log(err);
-//             })
-//         props.dispatch(logoutAction())
-//         localStorage.clear('persist:root')
-//         console.log('status ?');
-//         router.push('/')
-//     })
-//     return <></>
-// }
-
-// const mapStateToProps = (state) => {
-//     return {
-//         id: state.auth.userData.id,
-//         token: state.auth.userData.token
-//     };
-// };
-
-// export default connect(mapStateToProps)(Logout)

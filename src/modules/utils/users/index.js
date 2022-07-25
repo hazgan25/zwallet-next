@@ -41,3 +41,8 @@ export const changeNameUser = (id, body, token) => {
     const urlChangeNameUser = URL + `/profile/${id}`
     return axios.patch(urlChangeNameUser, body, { headers: { Authorization: `Bearer ${token}` } })
 }
+
+export const ChangePasswordUser = (id, body, token) => {
+    const urlChangePassUser = URL + `/password/${id}`
+    return axios.patch(urlChangePassUser, body, { headers: { Authorization: `Bearer ${token}` } })
+}

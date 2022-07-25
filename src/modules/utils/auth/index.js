@@ -15,3 +15,13 @@ export const logout = (token) => {
     const urlLogout = URL + '/logout'
     return axios.post(urlLogout, { headers: { Authorization: `Bearer ${token}` } })
 }
+
+export const forgotPasswordUser = (body) => {
+    const urlForgotPasswordUser = URL + '/auth/forgot-password'
+    return axios.post(urlForgotPasswordUser, body)
+}
+
+export const resetPasswordUser = (body) => {
+    const urlResetPasswordUser = URL + '/auth/reset-password'
+    return axios.patch(urlResetPasswordUser, body)
+}
